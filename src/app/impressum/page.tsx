@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
-import LegalPage, { EditorNote } from "@/components/LegalPage";
+import LegalPage from "@/components/LegalPage";
 import { legal, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Impressum",
-  description: `Impressum und Anbieterkennzeichnung der ${site.legalName}, ${site.city}.`,
+  description: `Impressum und Anbieterkennzeichnung von ${site.name}, ${site.city}.`,
   alternates: { canonical: "/impressum" },
 };
+
+const istGesellschaft = legal.rechtsform === "ug";
+const zeigtRegister = istGesellschaft && legal.registergericht && legal.registernummer;
 
 export default function Impressum() {
   return (
@@ -15,15 +18,11 @@ export default function Impressum() {
       title="Impressum"
       intro="Anbieterkennzeichnung gemäß § 5 Digitale-Dienste-Gesetz (DDG)."
     >
-      <EditorNote>
-        Die Angaben in eckigen Klammern müssen noch ergänzt werden: Name des
-        Geschäftsführers, Handelsregisternummer und Umsatzsteuer-Identifikationsnummer.
-        Ohne diese Angaben ist das Impressum unvollständig und abmahnfähig.
-      </EditorNote>
-
       <h2>Angaben gemäß § 5 DDG</h2>
       <address>
-        <strong>{site.legalName}</strong>
+        <strong>{site.owner}</strong>
+        <br />
+        {site.name} – {site.subline}
         <br />
         {site.street}
         <br />
@@ -32,9 +31,6 @@ export default function Impressum() {
         Deutschland
       </address>
 
-      <h3>Vertreten durch</h3>
-      <p>{legal.vertretenDurch}</p>
-
       <h3>Kontakt</h3>
       <p>
         Telefon: <a href={site.phoneHref}>{site.phonePretty}</a>
@@ -42,27 +38,35 @@ export default function Impressum() {
         E-Mail: <a href={site.emailHref}>{site.email}</a>
       </p>
 
-      <h3>Registereintrag</h3>
-      <p>
-        Eintragung im Handelsregister
-        <br />
-        Registergericht: {legal.registergericht}
-        <br />
-        Registernummer: {legal.registernummer}
-      </p>
+      {zeigtRegister ? (
+        <>
+          <h3>Registereintrag</h3>
+          <p>
+            Eintragung im Handelsregister
+            <br />
+            Registergericht: {legal.registergericht}
+            <br />
+            Registernummer: {legal.registernummer}
+          </p>
+        </>
+      ) : null}
 
-      <h3>Umsatzsteuer-Identifikationsnummer</h3>
-      <p>
-        Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:{" "}
-        {legal.ustId}
-      </p>
+      {legal.ustId ? (
+        <>
+          <h3>Umsatzsteuer-Identifikationsnummer</h3>
+          <p>
+            Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:{" "}
+            {legal.ustId}
+          </p>
+        </>
+      ) : null}
 
       <h2>Verantwortlich für den Inhalt</h2>
       <p>
         Verantwortlich für journalistisch-redaktionelle Inhalte gemäß § 18 Abs. 2 MStV:
       </p>
       <address>
-        {legal.vertretenDurch}
+        {site.owner}
         <br />
         {site.street}
         <br />
@@ -108,7 +112,7 @@ export default function Impressum() {
 
       <h2>Urheberrecht</h2>
       <p>
-        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten
+        Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten
         unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung,
         Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes
         bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.

@@ -11,12 +11,16 @@ import path from "node:path";
 const file = path.join(process.cwd(), "src", "lib", "site.ts");
 const source = readFileSync(file, "utf8");
 
-const legalBlock = /export const legal = \{([\s\S]*?)\n\} as const;/.exec(source);
+const legalBlock = /export const legal: Legal = \{([\s\S]*?)\n\};/.exec(source);
 
 if (!legalBlock) {
   console.error("check-legal: Der Block 'export const legal' wurde nicht gefunden.");
   process.exit(1);
 }
+
+// Ohne eigenen Mailversand taucht der E-Mail-Anbieter in keinem Rechtstext auf.
+const nutztFormsubmit = /provider:\s*"formsubmit"/.test(source);
+const nichtErforderlich = nutztFormsubmit ? ["mailProvider"] : [];
 
 const missing = [];
 const entry = /^\s*(\w+):\s*"([^"]*)"/gm;
@@ -24,6 +28,7 @@ let match;
 
 while ((match = entry.exec(legalBlock[1])) !== null) {
   const [, key, value] = match;
+  if (nichtErforderlich.includes(key)) continue;
   if (value.includes("[") && value.includes("]")) missing.push({ key, value });
 }
 

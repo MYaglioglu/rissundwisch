@@ -90,7 +90,7 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col gap-4 border-t border-white/[0.07] pt-7 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-steel-600">
-            © {year} {site.legalName}. Alle Rechte vorbehalten.
+            © {year} {site.name} · {site.owner}. Alle Rechte vorbehalten.
           </p>
           <div className="flex items-center gap-6 text-xs text-steel-600">
             <Link href="/impressum" className="transition-colors hover:text-steel-300">

@@ -4,7 +4,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 
-Landingpage für **Riss & Wisch** (Yaglioglu UG), ein Abbruch- und Gebäudereinigungsunternehmen
+Landingpage für **Riss & Wisch**, einen Abbruch- und Gebäudereinigungsbetrieb
 aus Karlsruhe. Ziel der Seite: aus Besuchern Anfragen machen — mit klarem Leistungsversprechen,
 kurzen Wegen zum Kontakt und einem Formular, das die Angaben abfragt, die für eine
 Kalkulation wirklich gebraucht werden.
@@ -155,6 +155,9 @@ Ein paar Punkte, die im Code nicht sofort sichtbar sind:
 
 ## Rechtliches
 
-Der Code dieses Projekts sowie Inhalte, Logo und Marke gehören der Yaglioglu UG
-(haftungsbeschränkt). Veröffentlichung als Referenzprojekt — keine Lizenz zur
-Weiterverwendung.
+Der Code dieses Projekts sowie Inhalte, Logo und Marke gehören dem Inhaber von
+Riss & Wisch. Veröffentlichung als Referenzprojekt — keine Lizenz zur Weiterverwendung.
+
+Die Rechtsform ist in [`src/lib/site.ts`](src/lib/site.ts) hinterlegt (`legal.rechtsform`).
+Impressum und Datenschutzerklärung passen sich an: Register- und Umsatzsteuerangaben
+erscheinen nur, wenn sie gesetzt sind — § 5 DDG verlangt sie nur, soweit vorhanden.

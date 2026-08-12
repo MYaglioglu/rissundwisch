@@ -17,9 +17,8 @@ export default function Datenschutz() {
       intro={`Informationen zur Verarbeitung Ihrer personenbezogenen Daten nach Art. 13 und 14 DSGVO. Stand: ${legal.stand}.`}
     >
       <EditorNote>
-        Vor dem Livegang zu ergänzen: Name des Geschäftsführers, Hosting-Anbieter und
-        E-Mail-Anbieter (jeweils mit Anschrift). Mit beiden Dienstleistern muss zusätzlich
-        ein Auftragsverarbeitungsvertrag nach Art. 28 DSGVO geschlossen werden.
+        Mit dem Hosting-Anbieter ist ein Auftragsverarbeitungsvertrag nach Art. 28 DSGVO
+        zu schließen (bei Vercel im Dashboard unter Settings → Security &amp; Privacy).
         {contactForm.provider === "formsubmit"
           ? " Das Formular läuft derzeit über den Dienst FormSubmit (Abschnitt 4.2) – hier ist zu klären, ob der Anbieter einen Auftragsverarbeitungsvertrag anbietet; andernfalls sollte auf den Versand über das eigene Postfach umgestellt werden."
           : ""}{" "}
@@ -30,9 +29,9 @@ export default function Datenschutz() {
       <h2>1. Verantwortlicher</h2>
       <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist:</p>
       <address>
-        <strong>{site.legalName}</strong>
+        <strong>{site.owner}</strong>
         <br />
-        {legal.vertretenDurch}
+        {site.name} – {site.subline}
         <br />
         {site.street}
         <br />
@@ -65,7 +64,10 @@ export default function Datenschutz() {
       <h2>3. Hosting und Server-Logfiles</h2>
       <p>
         Diese Website wird bei einem externen Dienstleister gehostet:{" "}
-        {legal.hoster}. Beim Aufruf der Seiten erhebt der Anbieter automatisch
+        {legal.hoster}. Die Auslieferung erfolgt über ein weltweites Servernetz; dabei
+        können Daten auch in die USA übermittelt werden. Grundlage dafür sind ein
+        Auftragsverarbeitungsvertrag nach Art. 28 DSGVO sowie die Standardvertragsklauseln
+        der EU-Kommission. Beim Aufruf der Seiten erhebt der Anbieter automatisch
         Informationen, die Ihr Browser übermittelt und die technisch erforderlich sind, um
         die Website auszuliefern:
       </p>

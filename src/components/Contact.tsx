@@ -9,8 +9,8 @@ const hex = {
 const tiles = [
   {
     icon: IconUser,
-    label: site.managing,
-    sub: "Geschäftsführer",
+    label: site.owner,
+    sub: site.ownerRole,
   },
   {
     icon: IconPhone,

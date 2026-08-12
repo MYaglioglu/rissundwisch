@@ -12,3 +12,8 @@ yarn-error.log*
 .vercel
 *.tsbuildinfo
 next-env.d.ts
+
+# Werkzeug- und Editor-Konfiguration (gehoert nicht ins Projekt)
+.claude/
+.vscode/
+.idea/

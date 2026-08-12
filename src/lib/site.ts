@@ -1,7 +1,9 @@
 export const site = {
   name: "Riss & Wisch",
-  legalName: "Yaglioglu UG (haftungsbeschränkt)",
-  managing: "Yaglioglu UG",
+  /** Rechtlicher Träger. Beim Einzelunternehmen die natürliche Person. */
+  legalName: "Murat Yaglioglu",
+  owner: "Murat Yaglioglu",
+  ownerRole: "Inhaber",
   claim: "Ein Team. Ein Anspruch. Ihre Lösung.",
   subline: "Abriss & Gebäudereinigung",
   phone: "015207330197",
@@ -44,21 +46,49 @@ export const contactForm = {
   formsubmitCode: "info@rissundwisch.de",
 } as const;
 
+type Rechtsform = "einzelunternehmen" | "ug";
+
+type Legal = {
+  rechtsform: Rechtsform;
+  registergericht: string;
+  registernummer: string;
+  ustId: string;
+  aufsichtsbehoerde: string;
+  hoster: string;
+  mailProvider: string;
+  stand: string;
+};
+
 /**
- * Pflichtangaben für Impressum & Datenschutz.
- * TODO: Von Yaglioglu UG ausfüllen lassen – Platzhalter dürfen nicht online gehen.
+ * Pflichtangaben für Impressum und Datenschutz.
+ *
+ * Umstellung auf die UG später: rechtsform auf "ug" setzen sowie
+ * registergericht und registernummer ausfüllen. Impressum und
+ * Datenschutzerklärung übernehmen das automatisch.
+ *
+ * Felder, die leer bleiben, werden in den Rechtstexten weggelassen –
+ * das ist zulässig, denn § 5 DDG verlangt diese Angaben nur, soweit vorhanden.
  */
-export const legal = {
-  vertretenDurch: "[Vor- und Nachname des Geschäftsführers]",
-  registergericht: "Amtsgericht Mannheim",
-  registernummer: "[HRB-Nummer]",
-  ustId: "[USt-IdNr. gemäß § 27a UStG]",
+export const legal: Legal = {
+  rechtsform: "einzelunternehmen",
+
+  /** Nur bei eingetragener Gesellschaft. Sonst leer lassen. */
+  registergericht: "",
+  registernummer: "",
+
+  /** Umsatzsteuer-Identifikationsnummer, falls vergeben. Sonst leer lassen. */
+  ustId: "",
+
   aufsichtsbehoerde:
     "Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg, Lautenschlagerstraße 20, 70173 Stuttgart",
-  hoster: "[Name und Anschrift des Hosting-Anbieters]",
+
+  hoster: "Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, USA",
+
+  /** Nur nötig, wenn contactForm.provider auf "eigener" steht. */
   mailProvider: "[Name und Anschrift des E-Mail-Anbieters]",
+
   stand: "August 2026",
-} as const;
+};
 
 export const nav = [
   { label: "Leistungen", href: "/#leistungen" },
