@@ -1,6 +1,6 @@
 import type { ComponentType } from "react";
 import Link from "next/link";
-import { LogoMark } from "@/components/Logo";
+import HeroAnimation from "@/components/HeroAnimation";
 import {
   IconArrowRight,
   IconCheck,
@@ -154,17 +154,11 @@ export default function Hero() {
                 className="absolute left-1/2 top-1/2 h-[58%] w-[58%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/[0.09]"
               />
 
-              <LogoMark className="animate-float absolute left-1/2 top-1/2 h-[46%] w-[46%] -translate-x-1/2 -translate-y-1/2 drop-shadow-[0_18px_45px_rgba(30,124,232,0.35)]" />
+              <HeroAnimation />
 
               {/* Sheen */}
               <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
                 <div className="animate-sheen absolute -inset-y-10 left-0 w-24 bg-gradient-to-r from-transparent via-white/[0.07] to-transparent" />
-              </div>
-
-              <div className="absolute inset-x-8 bottom-8 text-center">
-                <p className="font-display text-sm font-medium uppercase tracking-[0.32em] text-steel-500">
-                  {site.claim}
-                </p>
               </div>
             </div>
 

@@ -25,6 +25,7 @@ Reinigung. Genau das ist das Verkaufsargument, und die Seitenstruktur ist darauf
 ## Features
 
 - **Konversionsorientierte Startseite** — Hero mit Doppel-CTA, Leistungen, Vertrauensargumente, 5-Schritte-Ablauf, Kontakt
+- **Animierte Hero-Sequenz** in drei Akten (Abrissbirne → Abzieher → Logo) als SVG mit CSS-Keyframes statt Videodatei: wenige Kilobyte, auf jedem Display scharf, kein Autoplay, das mobile Browser blockieren
 - **Anfrageformular** mit Feldern für Objekt, Fläche und Wunschtermin, damit Angebote ohne Rückfragen kalkuliert werden können
 - **Zwei austauschbare Versandwege** für das Formular (Drittanbieter oder eigenes Postfach) — umschaltbar über eine Zeile
 - **Spam-Schutz ohne Captcha** — Honigtopf-Feld, Zeitmessung und serverseitiges Rate-Limit
@@ -150,6 +151,11 @@ Ein paar Punkte, die im Code nicht sofort sichtbar sind:
   auf jedem Display scharf und ohne zusätzliche Requests.
 - **Schriften lokal.** Google Fonts über CDN einzubinden ist in Deutschland ein bekannter
   Abmahngrund; `next/font` liefert sie vom eigenen Server aus.
+- **Hero-Animation ohne Video.** Alle Teile hängen an derselben 12-Sekunden-Schleife und
+  werden über Prozentwerte getaktet, damit nichts auseinanderläuft. Zwei Fallstricke
+  stecken darin: ein Verlauf mit `objectBoundingBox` wird auf exakt senkrechten Linien
+  nicht gezeichnet, und in SVG zeigt die y-Achse nach unten — ein positiver Drehwinkel
+  schwingt deshalb nach links.
 - **Validierung an beiden Enden.** Client und Server prüfen nach denselben Regeln, damit
   beide Versandwege sich identisch verhalten.
 

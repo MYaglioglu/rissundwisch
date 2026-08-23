@@ -276,6 +276,222 @@
     transform: none;
   }
 
+
+  /* ---------- Hero-Sequenz: Abriss, Wischen, Logo ---------- */
+
+  /*
+     Eine Schleife, viele Teile. Damit nichts auseinanderlaeuft, teilen sich
+     alle Elemente dieselbe Dauer und werden ueber Prozentwerte getaktet:
+
+       0 – 18 %   Birne schwingt ein und trifft
+      18 – 34 %   Mauer bricht, Staub steigt auf
+      34 – 50 %   Abzieher wischt die Szene von links nach rechts weg
+      50 – 58 %   Tropfen fallen nach
+      52 – 90 %   Logo steht
+      90 – 100 %  Ausblenden und zurueck auf Anfang
+  */
+
+  .rw-anim {
+    --rw-cycle: 12s;
+  }
+
+  .rw-scene {
+    animation: rwWipeAway var(--rw-cycle) linear infinite;
+  }
+
+  .rw-ball {
+    transform-origin: 150px 0;
+    animation: rwSwing var(--rw-cycle) linear infinite;
+  }
+
+  .rw-block {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: rwBlockBreak var(--rw-cycle) cubic-bezier(0.3, 0, 0.5, 1) infinite;
+  }
+
+  .rw-block:nth-child(3n) {
+    animation-name: rwBlockBreakLate;
+  }
+
+  .rw-dust circle {
+    animation: rwDust var(--rw-cycle) ease-out infinite;
+  }
+
+  .rw-squeegee {
+    animation: rwSqueegee var(--rw-cycle) cubic-bezier(0.5, 0, 0.4, 1) infinite;
+  }
+
+  .rw-drops ellipse {
+    animation: rwDrop var(--rw-cycle) ease-in infinite;
+  }
+
+  .rw-logo {
+    opacity: 0;
+    animation: rwLogoIn var(--rw-cycle) cubic-bezier(0.22, 1, 0.36, 1) infinite;
+  }
+
+  /* Achtung Vorzeichen: In SVG zeigt y nach unten, deshalb schwingt ein
+     positiver Winkel nach links. Start also positiv, Aufprall negativ. */
+  @keyframes rwSwing {
+    0% {
+      transform: rotate(38deg);
+    }
+    5% {
+      transform: rotate(38deg);
+    }
+    18% {
+      transform: rotate(-34deg);
+    }
+    24% {
+      transform: rotate(-2deg);
+    }
+    30% {
+      transform: rotate(-22deg);
+    }
+    36% {
+      transform: rotate(-9deg);
+    }
+    100% {
+      transform: rotate(-14deg);
+    }
+  }
+
+  @keyframes rwBlockBreak {
+    0%,
+    17% {
+      transform: none;
+      opacity: 1;
+    }
+    34%,
+    100% {
+      transform: translate(var(--dx), var(--dy)) rotate(var(--rot));
+      opacity: 0;
+    }
+  }
+
+  @keyframes rwBlockBreakLate {
+    0%,
+    19% {
+      transform: none;
+      opacity: 1;
+    }
+    36%,
+    100% {
+      transform: translate(var(--dx), var(--dy)) rotate(var(--rot));
+      opacity: 0;
+    }
+  }
+
+  @keyframes rwDust {
+    0%,
+    17% {
+      transform: translate(0, 0) scale(0.2);
+      opacity: 0;
+    }
+    23% {
+      opacity: 0.7;
+    }
+    38% {
+      transform: translate(var(--dx), -46px) scale(1.7);
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes rwSqueegee {
+    0%,
+    33% {
+      transform: translateX(-30px);
+      opacity: 0;
+    }
+    34.5% {
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(408px);
+      opacity: 1;
+    }
+    54% {
+      transform: translateX(452px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(452px);
+      opacity: 0;
+    }
+  }
+
+  /* Die Abriss-Szene verschwindet genau hinter der Kante des Abziehers. */
+  @keyframes rwWipeAway {
+    0%,
+    34% {
+      clip-path: inset(0 0 0 0);
+      opacity: 1;
+    }
+    50% {
+      clip-path: inset(0 0 0 100%);
+      opacity: 1;
+    }
+    51% {
+      clip-path: inset(0 0 0 100%);
+      opacity: 0;
+    }
+    97% {
+      clip-path: inset(0 0 0 100%);
+      opacity: 0;
+    }
+    97.5% {
+      clip-path: inset(0 0 0 0);
+      opacity: 0;
+    }
+    100% {
+      clip-path: inset(0 0 0 0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes rwDrop {
+    0%,
+    38% {
+      transform: translateY(0) scale(0.5);
+      opacity: 0;
+    }
+    46% {
+      opacity: 0.95;
+    }
+    58% {
+      transform: translateY(30px) scale(1);
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes rwLogoIn {
+    0%,
+    50% {
+      opacity: 0;
+      transform: translateY(16px) scale(0.94);
+    }
+    62% {
+      opacity: 1;
+      transform: none;
+    }
+    88% {
+      opacity: 1;
+      transform: none;
+    }
+    96%,
+    100% {
+      opacity: 0;
+      transform: translateY(-12px) scale(0.98);
+    }
+  }
+
   /* ---------- Animationen ---------- */
 
   @keyframes sheen {
@@ -346,6 +562,23 @@
     .animate-pulse-ring,
     .animate-marquee {
       animation: none;
+    }
+
+    /* Ohne Bewegung zeigt der Hero direkt das Schlussbild: nur das Logo. */
+    .rw-anim *,
+    .rw-anim {
+      animation: none;
+    }
+
+    .rw-scene,
+    .rw-squeegee,
+    .rw-drops {
+      opacity: 0;
+    }
+
+    .rw-logo {
+      opacity: 1;
+      transform: none;
     }
   }
 }
