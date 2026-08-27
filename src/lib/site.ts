@@ -1,8 +1,8 @@
 export const site = {
   name: "Riss & Wisch",
   /** Rechtlicher Träger. Beim Einzelunternehmen die natürliche Person. */
-  legalName: "Murat Yaglioglu",
-  owner: "Murat Yaglioglu",
+  legalName: "Murat Yağlıoğlu",
+  owner: "Murat Yağlıoğlu",
   ownerRole: "Inhaber",
   claim: "Ein Team. Ein Anspruch. Ihre Lösung.",
   subline: "Abriss & Gebäudereinigung",
@@ -85,7 +85,7 @@ export const legal: Legal = {
   hoster: "Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, USA",
 
   /** Nur nötig, wenn contactForm.provider auf "eigener" steht. */
-  mailProvider: "[Name und Anschrift des E-Mail-Anbieters]",
+  mailProvider: "IONOS SE, Elgendorfer Str. 57, 56410 Montabaur",
 
   stand: "August 2026",
 };
