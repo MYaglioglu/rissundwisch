@@ -5,8 +5,11 @@ import Footer from "@/components/Footer";
 import Reveal from "@/components/Reveal";
 import "./globals.css";
 
+// latin-ext wegen der tuerkischen Zeichen im Inhabernamen (Yağlıoğlu).
+// Ohne Vorabladen wuerde das "ğ" beim ersten Rendern kurz in einer
+// Ersatzschrift stehen. Oswald braucht es nicht: dort steht nur der Schriftzug.
 const inter = Inter({
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   variable: "--font-inter",
   display: "swap",
 });
