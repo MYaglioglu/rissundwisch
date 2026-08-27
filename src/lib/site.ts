@@ -36,7 +36,7 @@ export const site = {
  * Beim Wechsel passt sich die Datenschutzerklärung automatisch an.
  */
 export const contactForm = {
-  provider: "formsubmit" as "formsubmit" | "eigener",
+  provider: "eigener" as "formsubmit" | "eigener",
 
   /**
    * Zunächst die eigene E-Mail-Adresse. Nach der ersten Absendung schickt
