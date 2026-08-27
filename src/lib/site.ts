@@ -1,8 +1,8 @@
 export const site = {
   name: "Riss & Wisch",
   /** Rechtlicher Träger. Beim Einzelunternehmen die natürliche Person. */
-  legalName: "Murat Yağlıoğlu",
-  owner: "Murat Yağlıoğlu",
+  legalName: "Murat Yağlioğlu",
+  owner: "Murat Yağlioğlu",
   ownerRole: "Inhaber",
   claim: "Ein Team. Ein Anspruch. Ihre Lösung.",
   subline: "Abriss & Gebäudereinigung",
