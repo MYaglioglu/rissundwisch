@@ -56,7 +56,17 @@ export default function LegalPage({
   );
 }
 
+/**
+ * Interner Hinweis fuer die Redaktion.
+ *
+ * Erscheint ausschliesslich im Entwicklungsmodus. Im Produktions-Build
+ * ersetzt Next.js process.env.NODE_ENV durch "production", der Block faellt
+ * weg und der Text landet nicht einmal im ausgelieferten HTML. So kann eine
+ * interne Notiz nicht versehentlich oeffentlich werden.
+ */
 export function EditorNote({ children }: { children: ReactNode }) {
+  if (process.env.NODE_ENV === "production") return null;
+
   return (
     <div className="mt-8 rounded-2xl border border-amber-400/30 bg-amber-400/[0.07] px-5 py-4">
       <p className="font-display text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-amber-300">
