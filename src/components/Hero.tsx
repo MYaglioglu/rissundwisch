@@ -88,7 +88,7 @@ export default function Hero() {
               className="text-balance mt-8 max-w-xl text-base leading-relaxed text-steel-400 sm:text-lg"
             >
               Von der Entkernung bis zur besenreinen Übergabe: Wir übernehmen
-              Abbruch, Entsorgung und Reinigung – termintreu, staubarm und mit
+              Entkernung, Entsorgung und Reinigung – termintreu, staubarm und mit
               einem festen Ansprechpartner für Ihr gesamtes Projekt.
             </p>
 

@@ -16,7 +16,7 @@ export default function Footer() {
               <Wordmark />
             </div>
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-steel-500">
-              Abbruch, Entkernung und Gebäudereinigung aus Karlsruhe – für Bauträger,
+              Entkernung, Innenabbruch und Gebäudereinigung aus Karlsruhe – für Bauträger,
               Hausverwaltungen, Gewerbe und private Auftraggeber.
             </p>
             <p className="mt-5 font-display text-[0.68rem] font-medium uppercase tracking-[0.24em] text-brand-400">

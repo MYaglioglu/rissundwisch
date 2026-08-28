@@ -31,7 +31,7 @@ const empty: Values = {
   website: "",
 };
 
-const services = ["Abriss", "Gebäudereinigung", "Beides", "Sonstiges"];
+const services = ["Entkernung & Innenabbruch", "Gebäudereinigung", "Beides", "Sonstiges"];
 
 const inputClass =
   "w-full rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-steel-100 outline-none transition placeholder:text-steel-600 focus:border-brand-500/60 focus:bg-white/[0.05] focus:ring-2 focus:ring-brand-500/20";

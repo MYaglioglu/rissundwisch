@@ -30,11 +30,11 @@ export const metadata: Metadata = {
     template: "%s | Riss & Wisch",
   },
   description:
-    "Abbruch, Entkernung und professionelle Gebäudereinigung aus Karlsruhe. Sauber. Sicher. Zuverlässig. 24/7 erreichbar – kostenloses Angebot innerhalb von 24 Stunden.",
+    "Entkernung, Innenabbruch und professionelle Gebäudereinigung aus Karlsruhe. Sauber. Sicher. Zuverlässig. 24/7 erreichbar – kostenloses Angebot innerhalb von 24 Stunden.",
   keywords: [
-    "Abriss Karlsruhe",
-    "Abbruchunternehmen Karlsruhe",
     "Entkernung Karlsruhe",
+    "Innenabbruch Karlsruhe",
+    "Entrümpelung Karlsruhe",
     "Gebäudereinigung Karlsruhe",
     "Bauendreinigung",
     "Unterhaltsreinigung",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     siteName: "Riss & Wisch",
     title: "Riss & Wisch | Abriss & Gebäudereinigung in Karlsruhe",
     description:
-      "Ein Team. Ein Anspruch. Ihre Lösung. Abbruch und Gebäudereinigung aus einer Hand – sauber, sicher, zuverlässig.",
+      "Ein Team. Ein Anspruch. Ihre Lösung. Entkernung und Gebäudereinigung aus einer Hand – sauber, sicher, zuverlässig.",
   },
   robots: { index: true, follow: true },
 };

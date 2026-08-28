@@ -19,7 +19,7 @@ const steps = [
   {
     no: "04",
     title: "Ausführung",
-    text: "Abriss, Entsorgung und Reinigung nach Plan. Sie werden über jeden Bauabschnitt informiert.",
+    text: "Entkernung, Entsorgung und Reinigung nach Plan. Sie werden über jeden Bauabschnitt informiert.",
   },
   {
     no: "05",

@@ -15,10 +15,10 @@ const mainServices = [
     kicker: "Leistungsbereich 01",
     title: "Abriss",
     claim: "Sauber. Sicher. Zuverlässig.",
-    text: "Kompletter Rückbau oder gezielte Entkernung – wir planen jeden Schritt, sichern die Baustelle und übergeben ein sauberes Grundstück.",
+    text: "Gezielte Entkernung und Innenabbruch – wir planen jeden Schritt, sichern die Baustelle und übergeben besenrein.",
     items: [
-      "Kompletter Gebäudeabriss & Rückbau",
       "Entkernung von Wohnungen und Gewerbe",
+      "Demontage von Einbauten, Böden und Sanitär",
       "Innenabbruch, Wand- & Estrichdurchbrüche",
       "Fachgerechte Trennung und Entsorgung",
     ],
@@ -52,7 +52,7 @@ const addOns = [
   {
     icon: IconCheck,
     title: "Alles aus einer Hand",
-    text: "Abriss und Reinigung im selben Auftrag – ein Ansprechpartner, ein Termin­plan, ein Festpreis ohne Schnittstellenverluste.",
+    text: "Entkernung und Reinigung im selben Auftrag – ein Ansprechpartner, ein Termin­plan, ein Festpreis ohne Schnittstellenverluste.",
   },
 ];
 

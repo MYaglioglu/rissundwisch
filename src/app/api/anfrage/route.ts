@@ -43,7 +43,7 @@ type Payload = {
   startedAt?: number;
 };
 
-const services = ["Abriss", "Gebäudereinigung", "Beides", "Sonstiges"];
+const services = ["Entkernung & Innenabbruch", "Gebäudereinigung", "Beides", "Sonstiges"];
 
 function validate(data: Partial<Payload>) {
   const errors: Record<string, string> = {};

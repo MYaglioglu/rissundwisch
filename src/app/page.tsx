@@ -14,7 +14,7 @@ const jsonLd = {
   name: site.name,
   legalName: site.legalName,
   description:
-    "Abbruch, Entkernung und professionelle Gebäudereinigung in Karlsruhe und Umgebung.",
+    "Entkernung, Innenabbruch und professionelle Gebäudereinigung in Karlsruhe und Umgebung.",
   url: site.url,
   telephone: "+4915207330197",
   email: site.email,

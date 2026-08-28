@@ -1,7 +1,7 @@
 const keywords = [
-  "Abbruch",
   "Entkernung",
-  "Rückbau",
+  "Innenabbruch",
+  "Demontage",
   "Entrümpelung",
   "Containerstellung",
   "Bauendreinigung",

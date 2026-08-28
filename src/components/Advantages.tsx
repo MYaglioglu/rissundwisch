@@ -15,7 +15,7 @@ const advantages = [
     no: "01",
     icon: IconUser,
     title: "Ein fester Ansprechpartner",
-    text: "Von der Besichtigung über den Abriss bis zur Endreinigung begleitet Sie dieselbe Person. Keine Weiterleitung, keine Schnittstellen.",
+    text: "Von der Besichtigung über die Entkernung bis zur Endreinigung begleitet Sie dieselbe Person. Keine Weiterleitung, keine Schnittstellen.",
   },
   {
     no: "02",
