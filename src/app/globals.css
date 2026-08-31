@@ -108,6 +108,47 @@
     color: transparent;
   }
 
+  /*
+     Sicherheitsnetz fuer die Metall-Schrift.
+
+     .text-metal und .text-brand-metal faerben Text ueber einen Verlauf, der
+     per background-clip auf die Buchstaben beschnitten wird; die Schriftfarbe
+     selbst ist dabei transparent. Kann ein Browser das nicht - etwa manche
+     In-App-Browser von Instagram oder Facebook, oder der Kontrastmodus von
+     Windows -, bliebe der Text unsichtbar. Dann gilt eine normale Farbe.
+  */
+  @supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+    .text-metal,
+    .text-brand-metal {
+      background-image: none;
+      color: var(--color-steel-100);
+    }
+
+    .text-brand-metal {
+      color: var(--color-brand-400);
+    }
+  }
+
+  @media (forced-colors: active) {
+    .text-metal,
+    .text-brand-metal {
+      background-image: none;
+      color: CanvasText;
+      forced-color-adjust: none;
+    }
+  }
+
+  /*
+     Die Auswahlliste zeichnet der Browser selbst. Ohne eigene Farben nimmt er
+     den halbtransparenten Hintergrund des Feldes - dann steht helle Schrift
+     auf hellem Grund und die Eintraege sind kaum lesbar.
+  */
+  select option,
+  select optgroup {
+    background-color: var(--color-ink-800);
+    color: var(--color-steel-200);
+  }
+
   /* ---------- Flächen & Kanten ---------- */
 
   .panel {
