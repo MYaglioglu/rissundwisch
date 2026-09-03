@@ -16,7 +16,7 @@ const jsonLd = {
   description:
     "Entkernung, Innenabbruch und professionelle Gebäudereinigung in Karlsruhe und Umgebung.",
   url: site.url,
-  telephone: "+4915207330197",
+  telephone: site.phoneIntl,
   email: site.email,
   address: {
     "@type": "PostalAddress",

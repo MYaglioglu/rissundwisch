@@ -32,6 +32,7 @@ Reinigung. Genau das ist das Verkaufsargument, und die Seitenstruktur ist darauf
 - **WhatsApp-Sektion** — Kunden schicken Fotos statt einen Vor-Ort-Termin zu vereinbaren
 - **Impressum & Datenschutzerklärung** nach § 5 DDG und Art. 13 DSGVO, inklusive Abschnitt zur WhatsApp-Nutzung
 - **Keine externen Requests** — Schriften lokal ausgeliefert, keine Cookies, kein Tracking, kein Consent-Banner nötig
+- **Preisseite** mit 18 Leistungsbereichen, Schnellübersicht und Ausschlüssen je Bereich
 - **SEO** — Metadaten, Open Graph und `LocalBusiness`-Schema mit Adresse und Öffnungszeiten
 - **Barrierearm** — Tastaturbedienung, sichtbarer Fokus, `aria`-Auszeichnung, `prefers-reduced-motion` respektiert
 
@@ -44,6 +45,10 @@ Reinigung. Genau das ist das Verkaufsargument, und die Seitenstruktur ist darauf
 | Kontakt & Anfrageformular |
 |---|
 | ![Kontakt](docs/screenshots/kontakt.png) |
+
+| Preisübersicht |
+|---|
+| ![Preise](docs/screenshots/preise.png) |
 
 ## Tech-Stack
 

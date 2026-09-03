@@ -6,11 +6,13 @@ export const site = {
   ownerRole: "Inhaber",
   claim: "Ein Team. Ein Anspruch. Ihre Lösung.",
   subline: "Abriss & Gebäudereinigung",
-  phone: "015207330197",
-  phoneHref: "tel:+4915207330197",
-  phonePretty: "0152 07330197",
+  phone: "01795201166",
+  phoneHref: "tel:+491795201166",
+  phonePretty: "0179 5201166",
+  /** Internationale Schreibweise für strukturierte Daten */
+  phoneIntl: "+491795201166",
   whatsappHref:
-    "https://wa.me/4915207330197?text=" +
+    "https://wa.me/491795201166?text=" +
     encodeURIComponent(
       "Hallo Riss & Wisch, ich hätte gerne ein Angebot für folgendes Projekt: ",
     ),
