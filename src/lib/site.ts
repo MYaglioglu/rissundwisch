@@ -92,6 +92,7 @@ export const legal: Legal = {
 
 export const nav = [
   { label: "Leistungen", href: "/#leistungen" },
+  { label: "Preise", href: "/preise" },
   { label: "Warum wir", href: "/#vorteile" },
   { label: "Ablauf", href: "/#ablauf" },
   { label: "Kontakt", href: "/#kontakt" },

@@ -127,6 +127,31 @@ export default function Services() {
           ))}
         </div>
 
+        {/* Anreisser zur Preisseite: Vertrauen schaffen, ohne den Weg zur
+            Anfrage mit einer Preistabelle zu verstellen. */}
+        <Link
+          href="/preise"
+          data-reveal
+          className="panel group mt-6 flex flex-col gap-5 rounded-3xl p-7 transition-all duration-500 hover:-translate-y-1 sm:flex-row sm:items-center sm:justify-between sm:gap-8"
+        >
+          <div>
+            <p className="font-display text-[0.68rem] font-medium uppercase tracking-[0.24em] text-brand-400">
+              Transparente Richtpreise
+            </p>
+            <p className="mt-3 font-display text-xl font-semibold uppercase tracking-wide text-steel-100 sm:text-2xl">
+              Unterhaltsreinigung ab 3,50 €/m², Entkernung ab 25 €/m²
+            </p>
+            <p className="mt-2.5 text-sm leading-relaxed text-steel-400">
+              18 Leistungsbereiche mit Richtwerten netto – damit Sie vorher wissen, woran
+              Sie sind.
+            </p>
+          </div>
+          <span className="btn btn-ghost h-13 shrink-0 px-6 text-sm">
+            Preise ansehen
+            <IconArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </span>
+        </Link>
+
         <div className="mt-6 grid gap-6 md:grid-cols-3">
           {addOns.map((item, i) => (
             <article
